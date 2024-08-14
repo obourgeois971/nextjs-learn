@@ -1,11 +1,11 @@
 import mapsImg from '@/images/maps.jpg';
 import Image from 'next/image';
-
+const url = 'https://www.course-api.com/images/tours/tour-1.jpeg';
 console.log(mapsImg);
 
 const page = ({ params }: { params: { id: string } }) => {
   console.log(params);
-  // //localhost:3000/tours/123
+  // http//localhost:3000/tours/123
   http: return (
     <div>
       <h1 className='text-4xl'>ID : {params.id}</h1>
@@ -22,7 +22,17 @@ const page = ({ params }: { params: { id: string } }) => {
           <h2>local image</h2>
         </div>
         {/* remote image */}
-        <div></div>
+        <div>
+          <Image
+            src={url}
+            alt='tour'
+            width={192}
+            height={192}
+            priority
+            className='w-48 h-48 object-cover rounded'
+          />
+          <h2>remote image</h2>
+        </div>
       </section>
     </div>
   );
